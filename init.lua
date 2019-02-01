@@ -20,7 +20,7 @@ tree_fall = function(pos)
 				data[p_pos] = air
         --call to repeat in loop until finished
         minetest.add_item({x=pos.x+x, y=pos.y+y, z=pos.z+z},n)
-        minetest.after(0,function(pos,x,y,z)
+        minetest.after(0.1,function(pos,x,y,z)
           tree_fall({x=pos.x+x, y=pos.y+y, z=pos.z+z})
         end,pos,x,y,z)
 			end
