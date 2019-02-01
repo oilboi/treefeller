@@ -35,7 +35,7 @@ end
 minetest.register_on_dignode(function(pos, oldnode, digger)
   local node = oldnode.name
 
-  if minetest.get_item_group(node, "tree") then
+  if minetest.get_item_group(node, "tree") > 0 then
     local wield = digger:get_wielded_item():to_string()--minetest.registered_items
     if string.match(wield, ":axe_") then
       tree_fall(pos)
